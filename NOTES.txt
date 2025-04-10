@@ -1,0 +1,60 @@
+Q1. Write a program to insert a element at given index or givrn position
+	e->|1|2|3|4|5| |
+	p-> 0 1 2 3 4 5          p=2,e=8
+
+
+	we can swap aslo as follow
+	a=a^b;
+	b=a^b;
+	a=a^b;
+
+Q2. write a program to print from 1 to n
+Q3. write a program to find th sum of digit using recurrsion
+Q4. write a program to reverse using recurrsion
+Q5. write a program to get fibonacci series and factorial
+
+LINEAR DATA STRUCTURE
+//Singly Linked List is a linear data structure where each node points to the next node in the sequence. It is a dynamic data structure that can grow and shrink in size as needed. The first node is called the head, and the last node points to null.
+	- Singly Linked List
+	- Doubly Linked List
+	- Circular Linked List
+	- Circular Doubly Linked List
+
+STL : Standard Template Library
+
+It provides built in functions, built in classes, and libraries
+It contains: 1.container - vector ,list ,set, map,stack, queues
+ 			 2.iterators - pointer used to traverse the container
+ 			 3.algorithms - sort, search, reverse, find, etc. 
+ 			 4.function objects = special object that behaves like a function. 
+	containers: sequence, associative, and unordered associative containers.
+	- Sequence containers : store elements in a linear sequence. They allow for random access to elements and provide iterators for traversing the container. Examples include vector, list, deque, and array.
+	- Associative containers : store elements in a sorted order based on keys. They provide fast searching, insertion, and deletion based on keys. Examples include set, multiset, map, and multimap.
+	- Unordered associative containers : store elements in an unordered fashion based on hash values. They provide fast searching, insertion, and deletion based on hash values. Examples include unordered_set, unordered_multiset, Hash_map, and unordered_multimap.
+
+
+	- Vector : Dynamic array that can grow and shrink in size. It provides random access to elements and is implemented as a dynamic array.
+	- List : Doubly linked list that allows for efficient insertion and deletion of elements at any position.
+	- Deque : Double-ended queue that allows for insertion and deletion of elements at both ends.
+	- Stack : LIFO (Last In First Out) data structure that allows for insertion and deletion of elements from the top.
+	- Queue : FIFO (First In First Out) data structure that allows for insertion and deletion of elements from the front and back.
+	- Priority Queue : A queue where each element has a priority, and elements are dequeued based on their priority rather than their order of insertion.
+	- Set : A collection of unique elements that allows for efficient searching, insertion, and deletion.
+	- Map : A collection of key-value pairs that allows for efficient searching, insertion, and deletion based on keys.
+
+NOTE: what is segmentation fault?
+	- Segmentation fault is a specific kind of error caused by accessing memory that "does not belong to you." It's a mechanism that prevents you from corrupting the memory and introducing hard-to-debug memory bugs.
+	- It occurs when a program tries to read or write an illegal memory location. This can happen for several reasons, including dereferencing a null pointer, accessing an array out of bounds, or using a pointer that has already been freed.
+	- In C/C++, segmentation faults are often caused by dereferencing null or uninitialized pointers, accessing arrays out of bounds, or using pointers after they have been freed. In Python, segmentation faults can occur when using C extensions or when the Python interpreter itself encounters a low-level error.
+	- To avoid segmentation faults, it is important to initialize pointers before using them, check for null pointers, and ensure that array indices are within bounds. Additionally, using tools like Valgrind can help detect memory-related errors in C/C++ programs.	
+
+
+wrute code	for count sort:             // time complexity is O(n+k) and only works for positive integers.
+	give input 4228331
+	to get output 1223348
+
+
+	Q6.count nodes in the list
+	Q7.find middle element of the linked list
+	Q8.remove duplicates from sorted linked list
+9. Write a program to check list is circular or not, if not then make it circular double linked list.
