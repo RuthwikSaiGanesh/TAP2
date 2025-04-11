@@ -1,32 +1,74 @@
 #include<iostream>
 using namespace std;
 
-class Node 
+class Node
 {
+public:
     int data;
-    Node* child1;
-    Node* child2;
-    Node* child3;
+    Node* left;
+    Node* right; 
 
     Node(int value)
     {
-        data=value;
-        child1 = child2 = child3 = nullptr; 
+        data = value;
+        left = right = nullptr; 
     }
 };
+void preorder(Node* root)
+    {
+        if(root == nullptr)
+        {
+            return;
+        }
+        cout<<root->data<<" "; 
+        preorder(root->left); 
+        preorder(root->right); 
+    }
+    void inorder(Node* root)
+    {
+        if(root == nullptr)
+        {
+            return;
+        }
+        inorder(root->left); 
+        cout<<root->data<<" "; 
+        inorder(root->right); 
+    }
+    void postorder(Node* root)
+    {
+        if(root == nullptr)
+        {
+            return;
+        }
+        postorder(root->left); 
+        postorder(root->right); 
+        cout<<root->data<<" "; 
+    }
 
-void printTree(Node* root, int depth =0)
+//inorder traversal is a DFS trvaersal
+
+
+int main()
 {
-    if(root == nullptr)
-    {
-        return;
-    }
-    for(int i=0;i<depth;i++)
-    {
-        cout<<"  "; 
-    }
-    cout<<root->data<<endl; 
-    printTree(root->child1, depth + 1); 
-    printTree(root->child2, depth + 1);
-    printTree(root->child3, depth + 1);
+    Node* root = new Node(1); 
+    root->left = new Node(2); 
+    root->right = new Node(3); 
+    root->left->left = new Node(4); 
+    root->left->right = new Node(5); 
+    root->right->left = new Node(6);
+    root->right->right = new Node(7);
+
+    cout<<"Preorder Traversal: "; 
+    preorder(root); 
+    cout<<endl; 
+
+    cout<<"Inorder Traversal: "; 
+    inorder(root); 
+    cout<<endl; 
+
+    cout<<"Postorder Traversal: "; 
+    postorder(root); 
+    cout<<endl; 
+
+    return 0;
 }
