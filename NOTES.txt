@@ -58,3 +58,25 @@ wrute code	for count sort:             // time complexity is O(n+k) and only wor
 	Q7.find middle element of the linked list
 	Q8.remove duplicates from sorted linked list
 9. Write a program to check list is circular or not, if not then make it circular double linked list.
+
+queues
+operations in queues:
+	- enqueue : insert an element at the end of the queue.
+	- dequeue : remove an element from the front of the queue.
+	- front : get the element at the front of the queue without removing it.
+	- rear : get the element at the end of the queue without removing it.
+	- isEmpty : check if the queue is empty.
+	- isFull : check if the queue is full.
+	- size : get the number of elements in the queue.
+
+10. Write a program to reverse a string using Queue. [can use stl operations]
+11. Generate binary number from 1 to n using Queue.
+
+Trees 
+	- A tree is a non-linear data structure that consists of nodes connected by edges. It has a hierarchical structure with a root node at the top and child nodes below it.
+	- A binary tree is a tree where each node has at most two children, referred to as the left child and right child.
+	- A binary search tree (BST) is a binary tree where the left child of a node contains only nodes with values less than the parent node, and the right child contains only nodes with values greater than the parent node.
+	- A balanced binary tree is a binary tree where the height of the left and right subtrees of any node differ by at most one.
+	- A complete binary tree is a binary tree where all levels are completely filled except possibly for the last level, which is filled from left to right.
+
+	
