@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<queue>
 using namespace std;
 
 class Graph
@@ -18,29 +19,31 @@ class Graph
         adj[u].push_back(v);
         adj[v].push_back(u); 
     }
-    void dfsHelper(int node, vector<bool>& visited)
+    void BFS(int start)
     {
-        visited[node] = true; 
-        cout << node << " "; 
+        queue<int> q;
+        vector<bool> visited(v, false);
+        visited[start] = true;
+        q.push(start);
 
-        for (int neighbor : adj[node])
+        cout<<"BFS starting from node "<<start<<" : ";
+        while(!q.empty())
         {
-            if (!visited[neighbor])
+            int node = q.front();
+            q.pop(); 
+            cout<<node<<" "; 
+            for(int neighbour :adj[node])
             {
-                dfsHelper(neighbor, visited); 
-            }
-        }
-    }
-    void dfs(int startNode)
-    {
-        vector<bool> visited(v, false); 
-       cout<<"DFS starting from node "<<startNode<<" : ";
-        dfsHelper(startNode, visited); 
-        cout << endl;
-    }
-   
+                if(!visited[neighbour])
+                {
+                    visited[neighbour] =true;
+                    q.push(neighbour);
+                }
+            } 
+        } 
+        cout<<endl;
+    } 
 };
-
 int main()
 {
     Graph g(6); 
@@ -56,8 +59,8 @@ int main()
     g.addEdge(4, 3);
     g.addEdge(4, 5);
     g.addEdge(5, 4);
-    g.dfs(0); 
-    g.dfs(3); 
-    g.dfs(5); 
+    g.BFS(0); 
+    g.BFS(3); 
+    g.BFS(5); 
     return 0;
 }

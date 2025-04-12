@@ -105,3 +105,10 @@ Dynamic Progrsmming
 two ways:
 top down approach: 
 bottom up approch:
+
+
+hashing:
+double hashing: formula -> h(x) = (h1(x) + i*h2(x)) % m
+linear probing: formula -> h(x) = (h1(x) + i) % m
+quadratic probing: formula -> h(x) = (h1(x) + i^2) % m
+chaining: formula -> h(x) = h1(x) % m

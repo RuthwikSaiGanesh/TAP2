@@ -18,27 +18,40 @@ class Graph
         adj[u].push_back(v);
         adj[v].push_back(u); 
     }
-    void dfsHelper(int node, vector<bool>& visited)
+    void CheckCyclic(int node, vector<bool>& visited, vector<int>& parent)
     {
         visited[node] = true; 
-        cout << node << " "; 
-
         for (int neighbor : adj[node])
         {
             if (!visited[neighbor])
             {
-                dfsHelper(neighbor, visited); 
+                if(CheckCyclic(neighbor, visited, parent))
+                {
+                    return true; 
+                }
+            }
+            else if(neighbor != parent)
+            {
+                return true; 
             }
         }
+        return false;
     }
-    void dfs(int startNode)
+    bool isCyclic()
     {
         vector<bool> visited(v, false); 
-       cout<<"DFS starting from node "<<startNode<<" : ";
-        dfsHelper(startNode, visited); 
-        cout << endl;
+        for(int i=0;i<v;i++)
+        {
+            if(!visited[i])
+            {
+                if(CheckCyclic(i, visited, -1))
+                {
+                    return true; 
+                }
+            }
+        }
+        
     }
-   
 };
 
 int main()
@@ -56,8 +69,13 @@ int main()
     g.addEdge(4, 3);
     g.addEdge(4, 5);
     g.addEdge(5, 4);
-    g.dfs(0); 
-    g.dfs(3); 
-    g.dfs(5); 
-    return 0;
+
+    if(g.isCyclic())
+        cout<<"Graph is Cyclic"<<endl;
+    else
+        cout<<"Graph is Acyclic"<<endl;
+
+        return 0;
 }
+
+
