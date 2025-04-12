@@ -44,11 +44,11 @@ class BST
         inorder(root->right); 
     }
 
-    void Search(Node* root, int key)
+    Node* Search(Node* root, int key)
     {
         if(root == nullptr)
         {
-            cout<<"Empty";
+            return root;
         }
         if(root->data == key)
         {
@@ -58,10 +58,11 @@ class BST
         {
             return Search(root->left , key);
         }
-        else if(key>root->data)
+        else 
         {
             return Search(root->right , key);
         }
+        
     }
     Node* findMin(Node* root)
     {while(root && root->left !=nullptr)
@@ -143,6 +144,6 @@ int main()
     cout<<"Enter the key to delete: ";
     cin>>key;
     root = tree.deleteNode(root, key);
-    tree.inorder(root);
+    
     return 0;
 }

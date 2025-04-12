@@ -88,3 +88,20 @@ rule 2:  no duplicate values.
  arrival time:  9.00    9.40     9.50   11.00    15.00   18.00
  departure time:9.10    12.00    11.20  11.30    19.00   20.00
  find the number of platforms required 
+
+Greedy algorithm:
+	- A greedy algorithm is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most immediate benefit. It makes a locally optimal choice at each stage with the hope of finding a global optimum.
+	- Greedy algorithms are used in optimization problems where the goal is to find the best solution among many possible solutions.
+	- Examples of greedy algorithms include Kruskal's algorithm for finding the minimum spanning tree, Dijkstra's algorithm for finding the shortest path in a graph, and Huffman coding for data compression.
+	
+	Activity selection problem:
+	you are given N number activities
+	Start[] containing start time of each activity
+	Finish[] containing end time of each activity
+
+	output: max number of non overalapping activities
+	
+Dynamic Progrsmming
+two ways:
+top down approach: 
+bottom up approch:
